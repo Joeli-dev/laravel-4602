@@ -18,6 +18,14 @@ Route::get('/ship', [ShippingController::class, 'index']);
 |
 */
 
+Route::get('artikel', 'ArtikelController@index');
+Route::get('artikel/tambah', 'ArtikelController@create' );
+Route::get('artikel', 'ArtikelController@store');
+Route::get('artikel/{id}', 'ArtikelController@show');
+Route::get('artikel/{id}/edit', 'ArtikelController@edit');
+Route::put('artikel/{id}', 'ArtikelController@update');
+Route::delete('artikel/{id}', 'ArtikelController@destroy');
+
 Route::get('/', function () {
     return view('welcome');
 });
