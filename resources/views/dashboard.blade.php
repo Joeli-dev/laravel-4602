@@ -13,6 +13,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Nama</th>
+                        <th>Deskripsi</th>
+                        <th>Stok</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +22,8 @@
                         <tr>
                             <td>{{ $product['id'] }}</td>
                             <td>{{ $product['nama'] }}</td>
+                            <td>{{ $product['deskripsi'] }}</td>
+                            <td>{{ $product['stok'] }}</td>
                         </tr>
                     @endforeach
                 </tbody>
