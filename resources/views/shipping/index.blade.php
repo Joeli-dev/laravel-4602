@@ -1,3 +1,10 @@
+{{-- 
+    Nama : Mahardika Latief Fatianotoro
+    NIM : 1205215121512
+    Kelas : D3SI45-03
+    
+    --}}
+
 @extends('layouts.base')
 
 @section('title', 'Pengiriman Barang')
