@@ -11,20 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('artikels', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('judul');
-        //     $table->longText('isiartikel');
-        //     $table->string('tag')->nullable();
-        //     $table->string('status')->nullable();
-        //     $table->dateTime('tanggaltayang');
-        //     $table->timestamps();
-        // });
-
-        Schema::table('artikels', function (Blueprint $table){
-            $table->changeColumn('judul', 'string', ['lenght' => 255]);
+        Schema::create('artikels', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul');
+            $table->longText('isiartikel');
+            $table->string('tag')->nullable();
+            $table->string('status')->nullable();
+            $table->dateTime('tanggaltayang');
+            $table->timestamps();
         });
 
+      
         // Schema::drop('artikels');
 
 

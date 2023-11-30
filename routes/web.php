@@ -21,18 +21,25 @@ use App\Http\Controllers\OrderController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/orders', [OrderController::class, 'index']);
-Route::get('/dashboard', [HomeController::class, 'index']);
-Route::get('/', [ArtikelController::class, 'index']);
-Route::get('/artikel/tambah', [ArtikelController::class, 'create']);
-Route::get('/artikel', [ArtikelController::class, 'store']);
-Route::get('/artikel/{id}', [ArtikelController::class, 'show']);
-Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit']);
-Route::put('/artikel/{id}', [ArtikelController::class, 'update']);
-Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy']);
 
 
+Route::get('/', function(){
+    return view('welcome');
+});
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/shippings', [ShippingController::class, 'index'])->name('shippings');
+});
 
 
 
